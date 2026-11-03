@@ -27,20 +27,32 @@ Completa ejercicio 1: mapa y puestos disponibles
 """
 
 def crear_mapa(puestos):
-    # TODO: implementa esta funcion.
-    pass
+    return {
+        (f, c): puestos[f][c]
+        for f in range(len(puestos))
+        for c in range(len(puestos[f]))
+    }
 
 
 def obtener_disponibles(puestos):
-    # TODO: implementa esta funcion.
-    pass
+    return {
+        (f, c)
+        for f in range (len(puestos))
+        for c in range (len(puestos[f]))
+        if puestos [f][c] == 0
+    }
 
 
 if __name__ == "__main__":
     puestos = [[1, 0, 1], [0, 0, 1]]
 
-    # TODO: escribe las llamadas y muestra los resultados con print.
-    # TODO: agrega al menos un caso propio.
+    mapa = crear_mapa(puestos)
+    disponibles = obtener_disponibles(puestos)
+    print("Mapa completo:", mapa)
+    print("Disponibles:", disponibles)
 
-# ANALISIS
-# TODO: responde aqui las preguntas del enunciado.
+    print("Estado (1,2):", mapa[(1, 2)])
+
+    mi_tablero = [[0, 0], [1, 1]]
+    print("Mi tablero:", crear_mapa(mi_tablero))
+    print("Mis disponibles:", obtener_disponibles(mi_tablero))
