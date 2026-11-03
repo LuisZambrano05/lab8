@@ -24,11 +24,18 @@ Añade otro ejemplo con print y su resultado esperado en un comentario.
 Haz un commit: "Resuelve ejercicio 2".
 """
 
-# TODO: importa PRODUCTOS desde datos.
-# TODO: importa generar_reporte desde operaciones.
+from datos import PRODUCTOS
+from operaciones import generar_reporte
 
-# TODO: una vez completadas las importaciones, descomenta estas líneas.
-# print(generar_reporte(PRODUCTOS))
-# print(generar_reporte([]))
-
-# TODO: añade otro ejemplo con print y su resultado esperado en un comentario.
+if __name__ == "__main__":
+  
+    print("REPORTE CON PRODUCTOS")
+    print(generar_reporte(PRODUCTOS))
+    
+   
+    print("\nREPORTE VACÍO")
+    print(generar_reporte([]))
+    
+    mi_lista = [{"nombre": "jugo", "precio": 3, "stock": 10, "categoria": "bebida"}]
+    print("\nMI PROPIO CASO")
+    print(generar_reporte(mi_lista))
